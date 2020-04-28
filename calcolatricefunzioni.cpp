@@ -1,4 +1,5 @@
 #include <iostream>
+#include <conio.h>
 using namespace std;
 
 double moltiplicazione(double x, double y);
@@ -38,8 +39,10 @@ int main() {
 	double x = 0, y = 0;
 	menu1();
 	cout << "\nSELEZIONA UNA VOCE DAL MENU': ";
-	cin >> scelta;
+	scelta = _getch();
+	//cin >> scelta;
 	while (scelta > '5') {
+		system("cls");
 		cout << "\nDEVI SCEGLIERE UNA VOCE DAL MENU'!\n";
 		menu1();
 		cout << "\nSELEZIONA UNA VOCE DAL MENU': ";
@@ -49,13 +52,14 @@ int main() {
 		no_operands = true;
 
 	if (no_operands) {
-		cout << "NON POSSO ESEGUIRE UN'OPERAZIONE SENZA GLI OPERANDI, PER FAVORE INSERISCI PRIMA GLI OPERANDI!\n";
+		system("cls");
+		cout << "\n\nNON POSSO ESEGUIRE UN'OPERAZIONE SENZA GLI OPERANDI, PER FAVORE INSERISCI PRIMA GLI OPERANDI!\n";
 		scelta = '20';
 	}
 	if (scelta == '0') {
-		cout << "Insersici il primo operando: ";
+		cout << "\nInsersici il primo operando: ";
 		cin >> x;
-		cout << "Insersici il secondo operando: ";
+		cout << "\nInsersici il secondo operando: ";
 		cin >> y;
 		menu2();
 		cout << "\nSELEZIONA UNA VOCE DAL MENU': ";
